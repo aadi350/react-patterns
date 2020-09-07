@@ -1,0 +1,70 @@
+$accent-color: lightpink;
+$border-fix: none;
+
+.CardFrame {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: $border-fix;
+	height: 20rem;
+	width: 16rem;
+	font-family: 'Poppins', sans-serif;
+	transition: 0.2s ease-in;
+
+	&:hover {
+		box-shadow: 5px 5px rgba(0, 0, 0, 0.05);
+		.CardButtons {
+			opacity: 1;
+		}
+	}
+
+	.CardImageWrapper {
+		display: flex;
+		border: $border-fix;
+		height: 16rem;
+		width: inherit;
+		z-index: 4;
+	}
+
+	.CardDetailsWrapper {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		box-sizing: border-box;
+		width: inherit;
+		padding: 0.5rem;
+
+		.CardTextWrapper {
+			flex: 4;
+			.CardTextTitle {
+				color: grey;
+			}
+
+			.CardTextPrice {
+				color: lightgrey;
+			}
+		}
+	}
+}
+
+.CardButtons {
+	display: flex;
+	justify-content: center;
+	flex: 1;
+	opacity: 0;
+	transition: 0.2s ease-out;
+
+	.CardButton {
+		font-size: 2rem;
+		color: grey;
+		transition: inherit;
+		&:hover {
+			scale: 120%;
+			color: $accent-color;
+		}
+
+		&:active {
+			color: darken($accent-color, 50%);
+		}
+	}
+}
